@@ -1,0 +1,78 @@
+/* ───────────────────────────────
+   SECCIÓN SOBRE MÍ
+──────────────────────────────── */
+.about-container {
+    position: relative;
+    width: 100%;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    background: var(--gray-200);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: background 0.4s ease;
+}
+
+/* Modo oscuro */
+.dark .about-container {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Texto (transición entre idiomas) */
+.about-text {
+    position: absolute;
+    inset: 0;
+    padding: var(--space-xl);
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    line-height: 1.65;
+    z-index: 2; /* sobre la imagen */
+}
+
+.about-text.active {
+    opacity: 1;
+    position: relative; /* mantiene el flujo del contenedor */
+}
+
+/* Imagen de fondo tipo marca de agua */
+.about-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45%;
+    max-width: 320px;
+    min-width: 180px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    opacity: 0.08;
+    pointer-events: none; /* evita interferir con el texto */
+    z-index: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hover opcional: sutil realce */
+.about-container:hover .about-image {
+    opacity: 0.12;
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+/* Modo oscuro: más visible si el fondo es muy oscuro */
+.dark .about-image {
+    opacity: 0.15;
+}
+
+/* Adaptación en pantallas pequeñas */
+@media (max-width: 900px) {
+    .about-container {
+        padding: var(--space-lg);
+    }
+
+    .about-text {
+        padding: var(--space-md);
+    }
+
+    .about-image {
+        width: 60%;
+        max-width: 260px;
+        opacity: 0.1;
+    }
+}

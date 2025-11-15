@@ -1,0 +1,179 @@
+/* CUSTOM CURSOR — círculo + punto interno */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 26px;               /* tamaño visible */
+    height: 26px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.15s ease,
+        height 0.15s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        backdrop-filter 0.2s ease;
+}
+
+/* punto interno */
+.cursor-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--black);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease, width 0.15s ease, height 0.15s ease;
+}
+
+/* Hover: invertir colores completamente */
+.custom-cursor.hover {
+    border-color: var(--white);
+    background: var(--black);
+}
+
+.custom-cursor.hover .cursor-dot {
+    background: var(--white);
+}
+
+/* glassmorphism cuando pasa sobre sidebar */
+.sidebar:hover ~ .custom-cursor,
+.sidebar:hover + .custom-cursor {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(3px);
+    border-color: var(--accent-orange);
+}
+
+/* Colores especiales para elementos naranja */
+[data-cursor="orange"] ~ .custom-cursor,
+[data-cursor="orange"]:hover ~ .custom-cursor {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 10px var(--accent-orange-soft);
+}
+
+/* Colores especiales para elementos verde */
+[data-cursor="green"] ~ .custom-cursor,
+[data-cursor="green"]:hover ~ .custom-cursor {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green-soft);
+}
+
+/* Modo oscuro: inversión automática */
+.dark .custom-cursor {
+    border-color: var(--white);
+}
+
+.dark .cursor-dot {
+    background: var(--white);
+}
+
+/* CLICK ANIMATIONS: Ripple + Rebound + Highlight */
+
+/* Animación de onda */
+@keyframes cursor-ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(2.2);
+        opacity: 0.15;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.8);
+        opacity: 0;
+    }
+}
+
+/* Rebote del cursor */
+@keyframes cursor-rebound {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(0.76);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Destello del borde */
+@keyframes cursor-highlight {
+    0% {
+        border-color: var(--accent-orange);
+        box-shadow: 0 0 8px var(--accent-orange-soft);
+    }
+    100% {
+        border-color: var(--black);
+        box-shadow: none;
+    }
+}
+
+/* Aplicación combinada */
+.custom-cursor.clicked {
+    animation: cursor-rebound 0.28s ease-out,
+               cursor-highlight 0.4s ease-out;
+}
+
+/* Onda independiente */
+.custom-cursor::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-orange);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-cursor.ripple::after {
+    animation: cursor-ripple 0.45s ease-out forwards;
+}
+
+/* ─────────────────────────────────────────────
+   ANIMACIÓN DEL CURSOR — MODAL OPEN/CLOSE
+────────────────────────────────────────────── */
+
+/* Contracción inicial (cuando se abre el modal) */
+.cursor-modal-open {
+  transform: translate(-50%, -50%) scale(0.7);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 15px var(--accent-orange-soft);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+}
+
+/* Efecto glow suave mientras el modal está abierto */
+.cursor-modal-glow {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 20px var(--accent-orange-soft);
+  transition: box-shadow 0.8s ease-in-out;
+}
+
+/* Rebote sutil al cerrar el modal */
+@keyframes cursorRebound {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.cursor-modal-rebound {
+  animation: cursorRebound 0.4s ease-out;
+}

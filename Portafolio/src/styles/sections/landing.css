@@ -1,0 +1,200 @@
+/* LANDING */
+.landing {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: calc(var(--space-xl) * 3);
+}
+
+.landing-text h1 {
+    font-size: var(--text-xxl);
+    margin-bottom: var(--space-sm);
+}
+
+.landing-text h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+    font-weight: 500;
+    text-align: center;
+}
+
+.landing-text p {
+    font-size: var(--text-md);
+    color: var(--gray-500);
+}
+
+.landing-animation {
+    flex: 1;
+    min-height: 200px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--accent-orange-soft), var(--accent-green-soft));
+    box-shadow: var(--shadow-soft);
+}
+
+/* Animación de títulos profesionales (underline reveal) */
+.landing-professions_tittles {
+    position: relative;
+    overflow: hidden;
+    min-height: 1.6em; /* asegura espacio para el texto */
+}
+
+.landing-professions_tittles span {
+    opacity: 0;
+    position: absolute;
+    transition: opacity .5s ease;
+    left: 0;
+    top: 0;
+}
+
+.landing-professions_tittles span.active {
+    opacity: 1;
+}
+
+.landing-professions_tittles::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    height: 2px;
+    width: 0%;
+    background: var(--accent-color);
+    transition: width 1s ease;
+}
+
+.landing-professions_tittles.animate-line::after {
+    width: 100%;
+}
+
+/* CARD DE TECNOLOGÍAS (LANDING) */
+.landing-stack-card {
+    margin-top: var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-pill);
+    background: var(--gray-200);
+    box-shadow: var(--shadow-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.dark .landing-stack-card {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stack-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-orange-dark);
+}
+
+/* CONTENEDOR DE LOS ICONOS */
+.stack-icons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* ICONOS: BASE + TAMAÑO + TRANSICIONES */
+.stack-icons i {
+    font-size: 44px; /* tamaño aumentado */
+    opacity: 0.95;
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Hover elegante (levantar + brillo + sombra) */
+.stack-icons i:hover {
+    transform: translateY(-6px) scale(1.12);
+    filter: brightness(1.18);
+    opacity: 1;
+}
+
+/* GLOW DINÁMICO SEGÚN COLOR DEL ÍCONO */
+
+/* Java → rojo */
+.stack-icons .devicon-java-plain:hover {
+    box-shadow: 0 0 15px rgba(216, 63, 49, 0.55);
+}
+
+/* TypeScript → azul */
+.stack-icons .devicon-typescript-plain:hover {
+    box-shadow: 0 0 15px rgba(43, 122, 255, 0.55);
+}
+
+/* Python → amarillo */
+.stack-icons .devicon-python-plain:hover {
+    box-shadow: 0 0 15px rgba(255, 214, 67, 0.55);
+}
+
+/* Spring Boot → verde */
+.stack-icons .devicon-spring-plain:hover {
+    box-shadow: 0 0 15px rgba(55, 214, 80, 0.55);
+}
+
+/* MongoDB → verde oscuro */
+.stack-icons .devicon-mongodb-plain:hover {
+    box-shadow: 0 0 15px rgba(77, 179, 93, 0.55);
+}
+
+/* MySQL → cian */
+.stack-icons .devicon-mysql-plain:hover {
+    box-shadow: 0 0 15px rgba(0, 147, 175, 0.55);
+}
+
+/* ANIMACIÓN INICIAL (FADE + SLIDE UP) */
+@keyframes stack-fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* activar animación a todos los iconos */
+.stack-icons > * {
+    opacity: 0;
+    animation: stack-fade-up 0.6s ease-out forwards;
+}
+
+/* stagger (retardo escalonado) */
+.stack-icons > *:nth-child(1) { animation-delay: 0.05s; }
+.stack-icons > *:nth-child(2) { animation-delay: 0.12s; }
+.stack-icons > *:nth-child(3) { animation-delay: 0.19s; }
+.stack-icons > *:nth-child(4) { animation-delay: 0.26s; }
+.stack-icons > *:nth-child(5) { animation-delay: 0.33s; }
+.stack-icons > *:nth-child(6) { animation-delay: 0.40s; }
+.stack-icons > *:nth-child(7) { animation-delay: 0.47s; }
+
+/* MODO OSCURO — ajustes de brillo/saturación */
+.dark .stack-icons i {
+    filter: brightness(0.95) saturate(0.75);
+}
+
+.dark .stack-icons i:hover {
+    filter: brightness(1.25) saturate(1);
+}
+
+/* RESPONSIVE LANDING */
+@media (max-width: 900px) {
+    .landing {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .landing-animation {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .landing-text h1 {
+        font-size: 2rem;
+    }
+}
