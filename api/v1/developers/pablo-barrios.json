@@ -1,0 +1,20 @@
+{
+  "es": {
+    "name": "Pablo Barrios",
+    "role": "Backend / Full-Stack Developer",
+    "languages": ["Java", "TypeScript", "Python"],
+    "frameworks": ["Spring Boot", "Node.js", "Express", "Flask"],
+    "databases": ["MySQL", "MongoDB"],
+    "focus": ["APIs REST", "Autenticación JWT", "Modelado de datos"],
+    "openToWork": true
+  },
+  "en": {
+    "name": "Pablo Barrios",
+    "role": "Backend / Full-Stack Developer",
+    "languages": ["Java", "TypeScript", "Python"],
+    "frameworks": ["Spring Boot", "Node.js", "Express", "Flask"],
+    "databases": ["MySQL", "MongoDB"],
+    "focus": ["REST APIs", "JWT authentication", "Data modeling"],
+    "openToWork": true
+  }
+}

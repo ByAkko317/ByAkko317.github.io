@@ -1,0 +1,113 @@
+/* ─────────────────────────────────────────────
+   PROYECTOS — lista vertical, un proyecto por fila
+────────────────────────────────────────────── */
+.project-list {
+    border-top: 1px solid var(--line);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr) auto;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: start;
+    padding-block: var(--space-lg);
+    border-bottom: 1px solid var(--line);
+}
+
+.project-thumb {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    padding: 1.1rem;
+}
+
+.thumb-orange { background: var(--orange-soft); }
+.thumb-green { background: var(--green-soft); }
+.thumb-blue { background: var(--blue-soft); }
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-body h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.project-body p {
+    max-width: 60ch;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: var(--space-md);
+}
+
+.tags li {
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line);
+    font-size: var(--text-sm);
+    color: var(--ink);
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    min-width: 11rem;
+}
+
+.project-links a,
+.projects-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-weight: 600;
+    color: var(--green-ink);
+    text-decoration: none;
+}
+
+.project-links a:hover span,
+.projects-more a:hover span {
+    text-decoration: underline;
+}
+
+.projects-more {
+    margin-top: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .project {
+        grid-template-columns: 6rem minmax(0, 1fr);
+    }
+
+    .project-links {
+        grid-column: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+        min-width: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .project {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .project-thumb {
+        width: 5rem;
+        padding: 0.75rem;
+    }
+
+    .project-links {
+        grid-column: auto;
+    }
+}
