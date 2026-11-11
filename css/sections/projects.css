@@ -1,0 +1,201 @@
+/* ─────────────────────────────────────────────
+   PROYECTOS DESTACADOS — descripción + endpoints reales de su API
+────────────────────────────────────────────── */
+.featured-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.featured {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+}
+
+.featured-status {
+    display: inline-block;
+    margin-bottom: var(--space-sm);
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--radius-pill);
+    background: var(--orange-soft);
+    color: var(--orange-ink);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.featured h3 {
+    font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+}
+
+.featured-body > p:not(.featured-status) {
+    max-width: 62ch;
+    color: var(--muted);
+}
+
+.highlights {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+    max-width: 62ch;
+}
+
+.highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 2px;
+    background: var(--orange);
+}
+
+/* Panel de endpoints: mismo lenguaje visual que la tarjeta del hero */
+.endpoints {
+    align-self: start;
+    padding: 1.1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    background: var(--code-bg);
+    color: var(--code-ink);
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+}
+
+.endpoints-title {
+    margin-bottom: 0.6rem;
+    color: var(--code-muted);
+}
+
+.endpoints ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.endpoints li {
+    display: flex;
+    gap: 0.75rem;
+    overflow-wrap: anywhere;
+}
+
+.endpoints .m {
+    flex: 0 0 3.6em;
+    font-weight: 500;
+}
+
+.m-get { color: var(--code-string); }
+.m-post { color: var(--code-key); }
+.m-patch { color: #8ab4ff; }
+
+/* ─────────────────────────────────────────────
+   PROYECTOS ACADÉMICOS — lista compacta
+────────────────────────────────────────────── */
+.subsection-title {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    font-size: 1.25rem;
+}
+
+.project-list {
+    border-top: 1px solid var(--line);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-lg);
+    align-items: start;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.project h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-xs);
+}
+
+.project-body p {
+    max-width: 62ch;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: var(--space-md);
+}
+
+.tags li {
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line);
+    font-size: var(--text-sm);
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+}
+
+.featured .project-links {
+    margin-top: var(--space-md);
+}
+
+.project .project-links {
+    flex-direction: column;
+    min-width: 8rem;
+}
+
+.project-links a,
+.projects-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-weight: 600;
+    color: var(--green-ink);
+    text-decoration: none;
+}
+
+.project-links a:hover span,
+.projects-more a:hover span {
+    text-decoration: underline;
+}
+
+.projects-more {
+    margin-top: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .featured {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .project {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .project .project-links {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,281 @@
+/* ─────────────────────────────────────────────
+   TOKENS
+   Tema claro por defecto; el oscuro se aplica si el sistema lo pide
+   o si el usuario lo eligió (data-theme en <html>).
+────────────────────────────────────────────── */
+:root {
+    color-scheme: light;
+
+    /* Neutros */
+    --bg: #f3f4f6;
+    --surface: #ffffff;
+    --ink: #15171c;
+    --muted: #5a6170;
+    --line: #dfe2e8;
+
+    /* Acentos (identidad naranja / verde) */
+    --orange: #ff8c42;
+    --orange-ink: #b2500d;     /* naranja con contraste suficiente para texto */
+    --orange-soft: #ffe3cf;
+    --green: #3f9a45;
+    --green-ink: #2c7a32;
+    --green-soft: #dcf2dd;
+    --blue-soft: #dde9f7;
+
+    /* Panel de código (oscuro en ambos temas) */
+    --code-bg: #16191f;
+    --code-line: #2a2f39;
+    --code-ink: #d7dbe2;
+    --code-muted: #7c8494;
+    --code-key: #ffa266;
+    --code-string: #7fd88a;
+
+    /* Tipografía */
+    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+    --font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+    --text-hero: clamp(2.75rem, 1.4rem + 6vw, 5.75rem);
+
+    /* Espaciado */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --section-gap: clamp(4rem, 3rem + 5vw, 8rem);
+
+    /* Forma */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-pill: 999px;
+    --shadow-card: 0 1px 2px rgba(21, 23, 28, 0.06), 0 12px 32px -12px rgba(21, 23, 28, 0.18);
+
+    --container-width: 1120px;
+    --header-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #111317;
+        --surface: #1a1d23;
+        --ink: #e9ebef;
+        --muted: #9aa1ae;
+        --line: #2a2e37;
+        --orange-ink: #ffa266;
+        --orange-soft: #3a2618;
+        --green-ink: #6fd679;
+        --green-soft: #1b3220;
+        --blue-soft: #1c2738;
+        --code-bg: #0c0e12;
+        --code-line: #242832;
+        --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -16px rgba(0, 0, 0, 0.7);
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #111317;
+    --surface: #1a1d23;
+    --ink: #e9ebef;
+    --muted: #9aa1ae;
+    --line: #2a2e37;
+    --orange-ink: #ffa266;
+    --orange-soft: #3a2618;
+    --green-ink: #6fd679;
+    --green-soft: #1b3220;
+    --blue-soft: #1c2738;
+    --code-bg: #0c0e12;
+    --code-line: #242832;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -16px rgba(0, 0, 0, 0.7);
+}
+
+/* ─────────────────────────────────────────────
+   RESET & BASE
+────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--space-md));
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-lg);
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+::selection {
+    background: var(--orange);
+    color: #15171c;
+}
+
+:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.icon {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.skip-link {
+    position: absolute;
+    left: var(--space-md);
+    top: -100px;
+    z-index: 2000;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+    top: var(--space-md);
+}
+
+/* ─────────────────────────────────────────────
+   BOTONES
+────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.7rem 1.25rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: var(--text-md);
+    text-decoration: none;
+    line-height: 1.2;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: #1b1206;
+}
+
+.btn-primary:hover {
+    background: #ff7a26;
+}
+
+.btn-ghost {
+    border-color: var(--line);
+    background: var(--surface);
+}
+
+.btn-ghost:hover {
+    border-color: var(--ink);
+}
+
+.btn-small {
+    padding: 0.4rem 0.9rem;
+    font-size: var(--text-sm);
+    border-color: var(--line);
+    background: var(--surface);
+}
+
+.btn-small:hover {
+    border-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
