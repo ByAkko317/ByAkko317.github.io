@@ -1,20 +1,22 @@
 {
   "es": {
     "name": "Pablo Barrios",
-    "role": "Backend / Full-Stack Developer",
-    "languages": ["Java", "TypeScript", "Python"],
-    "frameworks": ["Spring Boot", "Node.js", "Express", "Flask"],
-    "databases": ["MySQL", "MongoDB"],
-    "focus": ["APIs REST", "Autenticación JWT", "Modelado de datos"],
+    "role": "Desarrollador Full Stack Junior",
+    "location": "Mendoza, Argentina",
+    "languages": ["Python", "TypeScript", "Java"],
+    "frameworks": ["FastAPI", "React", "Next.js", "Spring Boot", "Express"],
+    "databases": ["PostgreSQL", "MySQL", "MongoDB"],
+    "remote": true,
     "openToWork": true
   },
   "en": {
     "name": "Pablo Barrios",
-    "role": "Backend / Full-Stack Developer",
-    "languages": ["Java", "TypeScript", "Python"],
-    "frameworks": ["Spring Boot", "Node.js", "Express", "Flask"],
-    "databases": ["MySQL", "MongoDB"],
-    "focus": ["REST APIs", "JWT authentication", "Data modeling"],
+    "role": "Junior Full-Stack Developer",
+    "location": "Mendoza, Argentina",
+    "languages": ["Python", "TypeScript", "Java"],
+    "frameworks": ["FastAPI", "React", "Next.js", "Spring Boot", "Express"],
+    "databases": ["PostgreSQL", "MySQL", "MongoDB"],
+    "remote": true,
     "openToWork": true
   }
 }

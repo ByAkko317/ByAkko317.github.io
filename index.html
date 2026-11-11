@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Barrios | Backend / Full-Stack Developer</title>
-    <meta name="description" content="Portafolio de Pablo Barrios, desarrollador backend y full-stack. APIs REST con Java y Spring Boot, Node.js y Python, autenticación JWT y bases de datos MySQL y MongoDB.">
+    <!-- Seguridad: GitHub Pages no permite configurar cabeceras HTTP, así que la política va como meta.
+         Si cambiás el script en línea de más abajo, hay que recalcular su hash (ver README). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qCm9SoZn5TiUDaCYLruFXQI110oc0spORwBN+nDmYwY='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Pablo Barrios | Desarrollador Full Stack</title>
+    <meta name="description" content="Pablo Barrios, desarrollador full stack junior en Mendoza, Argentina. APIs REST con Python y FastAPI, frontends con React y TypeScript, automatizaciones con n8n. Disponible para trabajo remoto.">
     <meta name="author" content="Pablo Barrios">
     <meta name="theme-color" content="#111317">
+    <link rel="canonical" href="https://byakko317.github.io/">
 
-    <!-- Open Graph / LinkedIn
-         IMPORTANTE: tras desplegar, reemplazá https://TU-DOMINIO por la URL real (LinkedIn necesita URLs absolutas). -->
+    <!-- Open Graph / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
     <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="Pablo Barrios | Backend / Full-Stack Developer">
-    <meta property="og:description" content="APIs REST con Java, Spring Boot, Node.js y Python. Autenticación JWT, MySQL y MongoDB.">
-    <meta property="og:url" content="https://TU-DOMINIO/">
-    <meta property="og:image" content="https://TU-DOMINIO/assets/og-image.png">
+    <meta property="og:title" content="Pablo Barrios | Desarrollador Full Stack">
+    <meta property="og:description" content="APIs REST con Python y FastAPI, frontends con React y TypeScript, automatizaciones con n8n.">
+    <meta property="og:url" content="https://byakko317.github.io/">
+    <meta property="og:image" content="https://byakko317.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Pablo Barrios, Backend / Full-Stack Developer">
+    <meta property="og:image:alt" content="Pablo Barrios, Desarrollador Full Stack">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/png" href="assets/icons/coffee.png">
@@ -47,6 +52,7 @@
     <link rel="stylesheet" href="css/sections/hero.css">
     <link rel="stylesheet" href="css/sections/about.css">
     <link rel="stylesheet" href="css/sections/projects.css">
+    <link rel="stylesheet" href="css/sections/experience.css">
     <link rel="stylesheet" href="css/sections/contact.css">
     <link rel="stylesheet" href="css/components/cursor.css">
 
@@ -54,10 +60,14 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Pablo Barrios",
-        "jobTitle": "Backend / Full-Stack Developer",
-        "knowsAbout": ["Java", "Spring Boot", "Node.js", "Express", "Python", "Flask", "REST APIs", "JWT", "MySQL", "MongoDB", "TypeScript"],
-        "sameAs": ["https://github.com/ByAkko317", "https://www.linkedin.com/in/TU-USUARIO"]
+        "name": "Pablo Ariel Barrios",
+        "jobTitle": "Desarrollador Full Stack",
+        "url": "https://byakko317.github.io/",
+        "email": "mailto:bpablotrabajo@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mendoza", "addressCountry": "AR" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Tecnológica Nacional, Facultad Regional Mendoza" },
+        "knowsAbout": ["Python", "FastAPI", "React", "TypeScript", "Next.js", "Java", "Spring Boot", "Node.js", "PostgreSQL", "MongoDB", "n8n"],
+        "sameAs": ["https://github.com/ByAkko317", "https://www.linkedin.com/in/pablo-ariel-barrios-tuninetti-aab5a5386"]
     }
     </script>
 
@@ -66,7 +76,7 @@
 </head>
 <body>
     <!-- Iconos reutilizables -->
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <svg class="sprite" width="0" height="0" aria-hidden="true">
         <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3"/></symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
         <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
@@ -91,6 +101,7 @@
                 <ul>
                     <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
                     <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
                     <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -115,26 +126,27 @@
         <section class="hero container" id="top" aria-labelledby="hero-title">
             <div class="hero-text">
                 <h1 id="hero-title">Pablo Barrios</h1>
-                <p class="hero-role">Backend / Full-Stack Developer</p>
+                <p class="hero-role" data-i18n="hero.role">Desarrollador Full Stack Junior</p>
                 <p class="hero-pitch" data-i18n="hero.pitch">
-                    Construyo APIs y servicios backend con Java, Spring Boot, Node.js y Python, y las interfaces web que los consumen.
+                    Construyo aplicaciones web de punta a punta: APIs REST con Python y FastAPI, interfaces con React y TypeScript, y automatizaciones con n8n.
                 </p>
+                <p class="hero-location" data-i18n="hero.location">Mendoza, Argentina. Disponible para trabajo remoto.</p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#projects" data-i18n="hero.ctaProjects">Ver proyectos</a>
-                    <!-- TODO: subí tu CV a assets/cv/ con este nombre -->
                     <a class="btn btn-ghost" href="assets/cv/CV-Pablo-Barrios.pdf" download>
                         <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
                         <span data-i18n="hero.ctaCv">Descargar CV</span>
                     </a>
                 </div>
                 <ul class="social-links" aria-label="Redes" data-i18n-attr="aria-label:social.label">
-                    <li><a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                    <li><a href="https://www.linkedin.com/in/pablo-ariel-barrios-tuninetti-aab5a5386" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
                     <li><a href="https://github.com/ByAkko317" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
-                    <li><a href="mailto:tu-email@ejemplo.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+                    <li><a href="mailto:bpablotrabajo@gmail.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
                 </ul>
             </div>
 
-            <!-- La respuesta "de la API": el perfil como un endpoint -->
+            <!-- La respuesta "de la API": el perfil como un endpoint.
+                 El contenido real sale de api/v1/developers/pablo-barrios.json; esto es lo que se ve sin JavaScript. -->
             <figure class="api-card" aria-label="Perfil en formato JSON" data-i18n-attr="aria-label:api.label">
                 <div class="api-request">
                     <span class="api-method">GET</span>
@@ -145,15 +157,16 @@
                 </div>
                 <div class="api-status" aria-live="polite">
                     <span class="api-code" id="api-code">200 OK</span>
-                    <span class="api-time" id="api-time">42 ms</span>
+                    <span class="api-time" id="api-time"></span>
                 </div>
                 <pre class="api-body"><code id="api-body">{
   "name": "Pablo Barrios",
-  "role": "Backend / Full-Stack Developer",
-  "languages": ["Java", "TypeScript", "Python"],
-  "frameworks": ["Spring Boot", "Node.js", "Express", "Flask"],
-  "databases": ["MySQL", "MongoDB"],
-  "focus": ["APIs REST", "Autenticación JWT", "Modelado de datos"],
+  "role": "Desarrollador Full Stack Junior",
+  "location": "Mendoza, Argentina",
+  "languages": ["Python", "TypeScript", "Java"],
+  "frameworks": ["FastAPI", "React", "Next.js", "Spring Boot", "Express"],
+  "databases": ["PostgreSQL", "MySQL", "MongoDB"],
+  "remote": true,
   "openToWork": true
 }</code></pre>
             </figure>
@@ -165,36 +178,40 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p data-i18n="about.p1">
-                        Soy desarrollador full-stack con foco en backend. Me gusta diseñar APIs claras, modelar bien los datos y dejar el código ordenado para quien venga después.
+                        Soy desarrollador full stack junior y terminé de cursar la Tecnicatura Universitaria en Programación en la UTN Mendoza. Construyo aplicaciones web completas: el modelo de datos, la API y la interfaz.
                     </p>
                     <p data-i18n="about.p2">
-                        Desarrollo servicios REST con Spring Boot, Node.js/Express y Python/Flask: autenticación con JWT, manejo de roles, control de errores e integración con MySQL y MongoDB. También diseño los modelos entidad-relación, la normalización y las consultas.
+                        Desde febrero de 2026 trabajo en un equipo de desarrollo remoto que entrega soluciones para clientes reales. Mi foco está en el backend: APIs REST con Python y FastAPI y modelado de datos en PostgreSQL, junto con frontends en React.
                     </p>
                     <p data-i18n="about.p3">
-                        Del lado del frontend trabajo con TypeScript y CSS para construir interfaces responsivas que consumen esas APIs.
+                        Antes de programar trabajé cinco años en atención al cliente. De ahí traigo precisión, responsabilidad y la costumbre de trabajar bajo presión.
                     </p>
                 </div>
 
                 <dl class="skills">
                     <div class="skills-row">
                         <dt>Backend</dt>
-                        <dd>Java, Spring Boot, Node.js, Express, Python, Flask</dd>
-                    </div>
-                    <div class="skills-row">
-                        <dt data-i18n="skills.apis">APIs y seguridad</dt>
-                        <dd data-i18n="skills.apisList">REST, JWT, roles y permisos, validaciones</dd>
-                    </div>
-                    <div class="skills-row">
-                        <dt data-i18n="skills.data">Datos</dt>
-                        <dd data-i18n="skills.dataList">MySQL, MongoDB, modelado entidad-relación, normalización</dd>
+                        <dd>Python, FastAPI, Java, Spring Boot, Node.js, Express, APIs REST</dd>
                     </div>
                     <div class="skills-row">
                         <dt>Frontend</dt>
-                        <dd>TypeScript, JavaScript, HTML, CSS</dd>
+                        <dd>React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS</dd>
+                    </div>
+                    <div class="skills-row">
+                        <dt data-i18n="skills.data">Bases de datos</dt>
+                        <dd>PostgreSQL, MySQL, MongoDB</dd>
                     </div>
                     <div class="skills-row">
                         <dt data-i18n="skills.tools">Herramientas</dt>
-                        <dd>Git, GitHub, Docker</dd>
+                        <dd>Git, GitHub, Docker, Postman, n8n, Figma</dd>
+                    </div>
+                    <div class="skills-row">
+                        <dt data-i18n="skills.methods">Metodologías</dt>
+                        <dd data-i18n="skills.methodsList">Scrum, trabajo en equipo remoto, control de versiones</dd>
+                    </div>
+                    <div class="skills-row">
+                        <dt data-i18n="skills.languages">Idiomas</dt>
+                        <dd data-i18n="skills.languagesList">Español nativo, inglés intermedio (lectura y escritura técnica)</dd>
                     </div>
                 </dl>
             </div>
@@ -204,75 +221,139 @@
         <section class="section projects container" id="projects" aria-labelledby="projects-title">
             <h2 id="projects-title" data-i18n="projects.title">Proyectos</h2>
 
-            <ol class="project-list">
-                <li class="project">
-                    <div class="project-thumb thumb-orange">
-                        <img src="assets/img/delivery.png" alt="" width="256" height="256" loading="lazy">
+            <div class="featured-list">
+                <article class="featured">
+                    <div class="featured-body">
+                        <p class="featured-status" data-i18n="projects.inProgress">En desarrollo</p>
+                        <h3 data-i18n="f1.title">Turnos: plataforma de reservas white-label</h3>
+                        <p data-i18n="f1.desc">
+                            Sistema de turnos multi-tenant para consultorios, peluquerías o estudios. Cada negocio configura su marca, horarios, servicios y profesionales sobre la misma instalación. Incluye reserva en pasos, cobro de señas con Mercado Pago y recordatorios por WhatsApp y email con n8n.
+                        </p>
+                        <ul class="highlights">
+                            <li data-i18n="f1.h1">Capa de datos intercambiable (Airtable, Firebase o datos de prueba) detrás de un único punto de acceso: cambiar de proveedor no toca la interfaz.</li>
+                            <li data-i18n="f1.h2">Permisos por rol (paciente, profesional, administración) definidos en un solo archivo que usan la UI y el servidor.</li>
+                            <li data-i18n="f1.h3">Sesiones con cookie firmada con HMAC, contraseñas con scrypt y eventos firmados hacia n8n.</li>
+                            <li data-i18n="f1.h4">Entorno de pruebas con Mercado Pago y n8n simulados para recorrer el flujo completo sin cuentas reales.</li>
+                        </ul>
+                        <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+                            <li>Next.js 14</li><li>TypeScript</li><li>Tailwind CSS</li><li>Airtable</li><li>Mercado Pago</li><li>n8n</li><li>Vercel</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/ByAkko317/PsycologistProject" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                                <span data-i18n="projects.code">Ver código</span>
+                            </a>
+                        </div>
                     </div>
+                    <div class="endpoints" aria-label="Algunos endpoints de la API" data-i18n-attr="aria-label:projects.endpoints">
+                        <p class="endpoints-title">API</p>
+                        <ul>
+                            <li><span class="m m-get">GET</span> /api/availability</li>
+                            <li><span class="m m-post">POST</span> /api/bookings</li>
+                            <li><span class="m m-patch">PATCH</span> /api/bookings/:id</li>
+                            <li><span class="m m-post">POST</span> /api/portal/reschedule</li>
+                            <li><span class="m m-post">POST</span> /api/mercadopago/webhook</li>
+                            <li><span class="m m-get">GET</span> /api/cron/reminders</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="featured">
+                    <div class="featured-body">
+                        <h3 data-i18n="f2.title">Turnos para peluquería</h3>
+                        <p data-i18n="f2.desc">
+                            Sistema web para reservar y administrar turnos. El cliente elige servicio y horario libre y recibe confirmación y recordatorio por correo; el administrador gestiona la agenda completa con métricas del negocio.
+                        </p>
+                        <ul class="highlights">
+                            <li data-i18n="f2.h1">API en FastAPI con SQLAlchemy 2, migraciones con Alembic y autenticación JWT con dos roles.</li>
+                            <li data-i18n="f2.h2">Reglas de agenda validadas en el servidor: sin solapamientos, dentro del horario de atención y según la duración de cada servicio.</li>
+                            <li data-i18n="f2.h3">Automatizaciones en n8n: confirmación, recordatorio 24 h antes y aviso de cancelación.</li>
+                            <li data-i18n="f2.h4">Entorno completo con Docker Compose e integración continua con GitHub Actions.</li>
+                        </ul>
+                        <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+                            <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Docker</li><li>n8n</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/ByAkko317/TPI-Gesti-n-de-Software" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                                <span data-i18n="projects.code">Ver código</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="endpoints" aria-label="Algunos endpoints de la API" data-i18n-attr="aria-label:projects.endpoints">
+                        <p class="endpoints-title">API</p>
+                        <ul>
+                            <li><span class="m m-post">POST</span> /auth/login</li>
+                            <li><span class="m m-get">GET</span> /services</li>
+                            <li><span class="m m-post">POST</span> /appointments</li>
+                            <li><span class="m m-post">POST</span> /appointments/{id}/cancel</li>
+                            <li><span class="m m-get">GET</span> /admin/analytics</li>
+                            <li><span class="m m-get">GET</span> /internal/reminders</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="subsection-title" data-i18n="projects.academic">Proyectos académicos</h3>
+            <ul class="project-list">
+                <li class="project">
                     <div class="project-body">
-                        <h3>Food Store</h3>
+                        <h4 data-i18n="p1.title">API REST de e-commerce</h4>
                         <p data-i18n="p1.desc">
-                            Sistema de pedidos con backend en Java y Spring Boot, autenticación JWT y panel administrativo. API REST sobre MySQL y despliegue con Docker.
+                            Usuarios, categorías, productos, carrito, órdenes y reseñas, con permisos por rol y estadísticas mediante agregaciones de MongoDB.
                         </p>
                         <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
-                            <li>Java</li><li>Spring Boot</li><li>JWT</li><li>MySQL</li><li>Docker</li>
+                            <li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li><li>Docker</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ByAkko317/Parcial2_BD2" target="_blank" rel="noopener">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                            <span data-i18n="projects.code">Ver código</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="project">
+                    <div class="project-body">
+                        <h4>Food Store</h4>
+                        <p data-i18n="p2.desc">
+                            Sistema de pedidos en equipo, con backend en Java y Spring Boot, autenticación JWT y panel administrativo sobre MySQL.
+                        </p>
+                        <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+                            <li>Java</li><li>Spring Boot</li><li>JWT</li><li>MySQL</li>
                         </ul>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/LuchoAZ/CompuMundoF_Backend" target="_blank" rel="noopener">
                             <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-                            <span data-i18n="projects.backend">Código backend</span>
+                            <span data-i18n="projects.backend">Backend</span>
                         </a>
                         <a href="https://github.com/giulifragapane/compuMundoFront" target="_blank" rel="noopener">
                             <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-                            <span data-i18n="projects.frontend">Código frontend</span>
+                            <span data-i18n="projects.frontend">Frontend</span>
                         </a>
                     </div>
                 </li>
 
                 <li class="project">
-                    <div class="project-thumb thumb-green">
-                        <img src="assets/img/mongo.png" alt="" width="512" height="512" loading="lazy">
-                    </div>
                     <div class="project-body">
-                        <h3 data-i18n="p2.title">API con Node.js y MongoDB</h3>
-                        <p data-i18n="p2.desc">
-                            API en Node.js y Express con login, rutas protegidas y persistencia en MongoDB. Tokens JWT, validaciones y arquitectura modular MVC.
-                        </p>
-                        <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
-                            <li>Node.js</li><li>Express</li><li>JWT</li><li>MongoDB</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <!-- TODO: reemplazá por la URL real del repositorio -->
-                        <a href="https://github.com/ByAkko317" target="_blank" rel="noopener">
-                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-                            <span data-i18n="projects.code">Código</span>
-                        </a>
-                    </div>
-                </li>
-
-                <li class="project">
-                    <div class="project-thumb thumb-blue">
-                        <img src="assets/img/weather.png" alt="" width="256" height="256" loading="lazy">
-                    </div>
-                    <div class="project-body">
-                        <h3 data-i18n="p3.title">App del clima</h3>
+                        <h4 data-i18n="p3.title">App del clima</h4>
                         <p data-i18n="p3.desc">
-                            Aplicación web en Flask que consulta la API de OpenWeather, guarda el historial de búsquedas y las preferencias del usuario. Interfaz responsiva con modo oscuro.
+                            Aplicación en Flask que consulta la API de OpenWeather y guarda el historial de búsquedas y las preferencias del usuario.
                         </p>
                         <ul class="tags" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
-                            <li>Python</li><li>Flask</li><li>OpenWeather API</li><li>HTML</li><li>CSS</li>
+                            <li>Python</li><li>Flask</li><li>OpenWeather API</li>
                         </ul>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/ByAkko317/Scrumbl-cookies" target="_blank" rel="noopener">
                             <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-                            <span data-i18n="projects.code">Código</span>
+                            <span data-i18n="projects.code">Ver código</span>
                         </a>
                     </div>
                 </li>
-            </ol>
+            </ul>
 
             <p class="projects-more">
                 <a href="https://github.com/ByAkko317" target="_blank" rel="noopener">
@@ -282,23 +363,59 @@
             </p>
         </section>
 
+        <!-- EXPERIENCIA -->
+        <section class="section experience container" id="experience" aria-labelledby="experience-title">
+            <h2 id="experience-title" data-i18n="exp.title">Experiencia y formación</h2>
+
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <p class="timeline-date" data-i18n="exp.e1.date">Feb 2026 – actualidad</p>
+                    <div>
+                        <h3 data-i18n="exp.e1.title">Desarrollador Full Stack</h3>
+                        <p class="timeline-place" data-i18n="exp.e1.place">Equipo de desarrollo remoto</p>
+                        <ul class="timeline-points">
+                            <li data-i18n="exp.e1.p1">Desarrollo backend con Python y FastAPI (APIs REST y modelado de datos en PostgreSQL) y frontend en React según cada proyecto.</li>
+                            <li data-i18n="exp.e1.p2">Trabajo en equipos de 4 a 10 personas, con mentoría de un desarrollador con experiencia profesional remota, metodologías ágiles y Git.</li>
+                            <li data-i18n="exp.e1.p3">Entregué el sistema de turnos de un salón de peluquería y participo en el desarrollo de un segundo sistema para un consultorio psicológico.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <p class="timeline-date">2023 – 2026</p>
+                    <div>
+                        <h3 data-i18n="exp.edu.title">Tecnicatura Universitaria en Programación</h3>
+                        <p class="timeline-place" data-i18n="exp.edu.place">Universidad Tecnológica Nacional, Facultad Regional Mendoza. Cursada completa.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <p class="timeline-date" data-i18n="exp.e2.date">2020 – actualidad</p>
+                    <div>
+                        <h3 data-i18n="exp.e2.title">Atención al cliente y control operativo</h3>
+                        <p class="timeline-place" data-i18n="exp.e2.place">Comercio, gastronomía y eventos en Mendoza</p>
+                        <ul class="timeline-points">
+                            <li data-i18n="exp.e2.p1">Caja con 300 a 400 clientes por turno sin diferencias en el arqueo, atención de eventos de hasta 200 personas y control de stock.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
         <!-- CONTACTO -->
         <section class="section contact container" id="contact" aria-labelledby="contact-title">
             <div class="contact-intro">
                 <h2 id="contact-title" data-i18n="contact.title">Hablemos</h2>
                 <p data-i18n="contact.text">
-                    Busco mi próximo puesto como desarrollador backend o full-stack. La forma más rápida de contactarme es por email o LinkedIn.
+                    Busco mi próximo puesto como desarrollador full stack o backend, remoto o en Mendoza. La forma más rápida de contactarme es por email o LinkedIn.
                 </p>
 
                 <div class="contact-email">
-                    <!-- TODO: tu email real (también en el hero, el footer y el atributo data-email) -->
-                    <a class="email-link" href="mailto:tu-email@ejemplo.com">tu-email@ejemplo.com</a>
-                    <button class="btn btn-small" id="copy-email" type="button" data-email="tu-email@ejemplo.com" data-i18n="contact.copy">Copiar</button>
+                    <a class="email-link" href="mailto:bpablotrabajo@gmail.com">bpablotrabajo@gmail.com</a>
+                    <button class="btn btn-small" id="copy-email" type="button" data-email="bpablotrabajo@gmail.com" data-i18n="contact.copy">Copiar</button>
                 </div>
 
                 <ul class="contact-channels">
                     <li>
-                        <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" rel="noopener">
+                        <a href="https://www.linkedin.com/in/pablo-ariel-barrios-tuninetti-aab5a5386" target="_blank" rel="noopener">
                             <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn
                         </a>
                     </li>

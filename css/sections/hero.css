@@ -144,7 +144,7 @@
 .api-body {
     padding: 1.25rem;
     line-height: 1.75;
-    min-height: 15.5rem;
+    min-height: 18rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
@@ -223,4 +223,10 @@
         flex: 1 1 auto;
         justify-content: center;
     }
+}
+
+.hero-location {
+    margin-top: var(--space-sm);
+    color: var(--muted);
+    font-size: var(--text-sm);
 }

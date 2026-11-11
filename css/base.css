@@ -272,3 +272,10 @@ h3 {
         transition-duration: 0.01ms !important;
     }
 }
+
+.sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
